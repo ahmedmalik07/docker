@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frontend</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 2rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Frontend</h1>
+    <div id="message">Loading...</div>
+
+    <script>
+      fetch('/api')
+        .then(r => r.json())
+        .then(j => {
+          document.getElementById('message').textContent = j.message;
+        })
+        .catch(e => { document.getElementById('message').textContent = 'Error: ' + e; });
+    </script>
+  </body>
+</html>
