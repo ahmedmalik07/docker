@@ -36,7 +36,8 @@ try {
   $gfx.Dispose()
   $bmp.Dispose()
   Write-Host "Screenshot saved to $pngFile"
-} catch {
+}
+catch {
   Write-Warning "Screenshot failed: $_"
   $errFile = Join-Path $ScreenshotsDir "screenshot_error.txt"
   "Screenshot error: $_" | Out-File $errFile
